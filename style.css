@@ -1,0 +1,104 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Generic*/
+html {
+    background-color: white;
+    font-family: Livvic, sans-serif;
+}
+
+.container {
+    margin: 5% auto;
+    width: 80%;
+}
+
+.text {
+    margin: 5px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.day {
+    margin: 5% auto 0 auto;
+    text-align: center;
+}
+
+.exercise {
+    margin: 5%;
+    padding: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10%;
+}
+
+.serie {
+    margin: 5%;
+    padding: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10%;
+}
+
+.ripetizione {
+    margin: 5% auto 0 auto;
+    padding: 15px;
+    text-align: center;
+    width: 150px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10%;
+}
+
+.exerciseImg {
+    width: auto;
+    height: auto;
+    padding: 15%;
+    text-align: center;  
+}
+
+.img {
+    height: auto;
+    max-width: 90%;
+}
+
+.clock {
+    margin: 5% auto 0 auto;
+    padding: auto;
+    width: 120px;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10%;
+}
+
+.buttons {
+    margin: 5% auto 0 auto;
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+.finished {
+    background-color: #000000b7;
+    padding: 80% 25%;
+    color: white;
+    position: absolute;
+    width: 120%;
+    height: 200%;
+    text-align: center;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 200px;
+}
+
+.hidden {
+    visibility: hidden;
+}
