@@ -6,6 +6,7 @@ const ripetizione = document.querySelector(".ripetizione");
 const img = document.querySelector(".exerciseImg");
 const clock = document.querySelector(".clock");
 const finished = document.querySelector(".finished");
+const body = document.querySelector(".body");
 
 let iExercise = 0;
 let iSerie = 1;
@@ -70,6 +71,7 @@ function startCountdown() {
         // Do something when countdown is finished
         if (iExercise === 5 & iSerie===esercizio.serie){
             finished.classList.remove("hidden");
+            body.classList.add("hidden");
         }
         if (iSerie===esercizio.serie) {
             iSerie = 1;

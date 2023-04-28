@@ -2,17 +2,23 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
 }
 /*Generic*/
 html {
     background-color: white;
     font-family: Livvic, sans-serif;
+    width: 100%;
+}
+
+body {
+    width: 100%;
 }
 
 .container {
-    margin: 5% auto;
-    width: 80%;
+    max-width: 100%;
+    width: 100%;
 }
 
 .text {
@@ -84,20 +90,20 @@ html {
     padding-bottom: 10%;
 }
 
+h2 {
+    font-size: 200px;
+}
+
 .finished {
     background-color: #000000b7;
-    padding: 80% 25%;
     color: white;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    width: 120%;
-    height: 200%;
     text-align: center;
     z-index: 1;
 }
 
-h2 {
-    font-size: 200px;
-}
 
 .hidden {
     visibility: hidden;
