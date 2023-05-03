@@ -28,7 +28,7 @@ function changeDay() {
         iDay = 1;
         day.innerHTML = `<h1>Lunedì</h1>`
         iExercise = 0;
-        iSerie = 0;
+        iSerie = 1;
         const esercizio = source [iExercise];
         const nextEsercizio = source [iExercise+1];
         exercise.innerHTML = `<h4>Esercizio ${esercizio.esercizio} di 6</h4>`;
@@ -43,17 +43,17 @@ function changeDay() {
         if (iDay === 2) {
             day.innerHTML = `<h1>Mercoledì</h1>`
             iExercise = 6;
-            iSerie = 0;
+            iSerie = 1;
         }
         if (iDay === 3) {
             day.innerHTML = `<h1>Venerdì</h1>`
             iExercise = 12;
-            iSerie = 0;
+            iSerie = 1;
         }
         if (iDay === 4) {
             day.innerHTML = `<h1>Sabato</h1>`
             iExercise = 18;
-            iSerie = 0;
+            iSerie = 1;
         }
         const esercizio = source [iExercise];
         const nextEsercizio = source [iExercise+1];
