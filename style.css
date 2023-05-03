@@ -117,14 +117,15 @@ body {
     margin: 2%;
     width: 250px;
     height: 250px;
+    text-align: right;
 }
 
 .exerciseImg2 img {
-    padding: auto;
     min-width: 80%;
     min-height: 80%;
     max-width: 95%;
     max-height: 95%;
+    margin: 0 10% 0 10%;
 }
 
 .clock {
