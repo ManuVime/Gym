@@ -64,7 +64,7 @@ function changeDay() {
 
 function startCountdown() {
     const esercizio = source [iExercise];
-    var count = 2;//esercizio.rest; // 2 minutes in seconds
+    var count = esercizio.rest; // 2 minutes in seconds
     var timer = setInterval(function() {
       count--;
       var minutes = Math.floor(count / 60);
