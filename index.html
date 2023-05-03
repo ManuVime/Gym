@@ -21,22 +21,28 @@
     <script src="https://kit.fontawesome.com/aa6b15493d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="finished hidden"> <h2>Sessione finita!</h2></div>
+    <div class="finished hidden"> <h2>Sessione finita!</h2> <hr> <h2>Vai a fare plank!</h2></div>
     <div class="body">
         <div class="container">
             <div class="day"><h1>Lunedì</h1></div>
-            <div class="buttons"><button onclick="changeDay()"  class="btn btn-dark btn-lg downloadButton" type="button"><i class="fa-sharp fa-solid fa-dumbbell" style="color: #ffffff;"></i> Cambia giorno</button></div>
+            <div class="buttons"><button onclick="changeDay()"  class="btn btn-dark btn-lg dayButton" type="button"><h3>Cambia giorno</h3></button></div>
             <div class="text">
-                <div class="exercise">Esercizio 1 di 6</div>
-                <div class="serie">Serie 1 di 4</div>
+                <div class="exercise"></div>
+                <div class="serie"></div>
             </div>
-            <div class="ripetizione">12 Ripetizioni</div>
-            <div class="exerciseImg">
+            <div class="ripetizione"></div>
+            <div class="containerImg">
+                <div class="exerciseImg"></div>
+                <div class="nextExercise">
+                    <div class="nextText"> Next Exercise</div>
+                    <div class="exerciseImg2"></div>
+                </div>
+
             </div>
-            <div class="clock"> <h1 id="countdown">01:30</h1></div>
+            <div class="clock"></div>
             <div class="buttons">
                 <!--<button>Change exercise</button>-->
-                <button onclick="startCountdown()" class="btn btn-dark btn-lg downloadButton" type="button"><i class="fa-sharp fa-solid fa-dumbbell" style="color: #ffffff;"></i> Start Rest</button>
+                <button onclick="startCountdown()" class="btn btn-dark btn-lg timerButton" type="button"><i class="fa-sharp fa-solid fa-dumbbell fa-2xl" style="color: #ffffff;"></i> <h3>Start Rest</h3></button>
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@ const exercise = document.querySelector(".exercise");
 const serie = document.querySelector(".serie");
 const ripetizione = document.querySelector(".ripetizione");
 const img = document.querySelector(".exerciseImg");
+const img2 = document.querySelector(".exerciseImg2");
 const clock = document.querySelector(".clock");
 const finished = document.querySelector(".finished");
 const body = document.querySelector(".body");
@@ -12,11 +13,13 @@ let iExercise = 0;
 let iSerie = 1;
 let iDay=1;
 const esercizio = source [iExercise];
-exercise.innerHTML = `Esercizio ${esercizio.esercizio} di 6`;
-serie.innerHTML = `Serie ${iSerie} di ${esercizio.serie}`;
-ripetizione.innerHTML = `${esercizio.ripetizioni} Ripetizioni`;
+const nextEsercizio = source [iExercise+1];
+exercise.innerHTML = `<h4>Esercizio ${esercizio.esercizio} di 6</h4>`;
+serie.innerHTML = `<h4>Serie ${iSerie} di ${esercizio.serie}</h4>`;
+ripetizione.innerHTML = `<h4>${esercizio.ripetizioni} Ripetizioni</h4>`;
 img.innerHTML = `<img class "img" src ="${esercizio.immagine}" alt = "${esercizio.nome}">`;
-clock.innerHTML = `<h1 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h1>`;
+img2.innerHTML = `<img class "img2" src ="${nextEsercizio.immagine}" alt = "${nextEsercizio.nome}">`;
+clock.innerHTML = `<h5 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h5>`;
 
 function changeDay() {
     if (iDay === 4) {
@@ -24,11 +27,13 @@ function changeDay() {
         day.innerHTML = `<h1>Lunedì</h1>`
         iExercise = 0;
         const esercizio = source [iExercise];
-        exercise.innerHTML = `Esercizio ${esercizio.esercizio} di 6`;
-        serie.innerHTML = `Serie ${iSerie} di ${esercizio.serie}`;
-        ripetizione.innerHTML = `${esercizio.ripetizioni} Ripetizioni`;
+        const nextEsercizio = source [iExercise+1];
+        exercise.innerHTML = `<h4>Esercizio ${esercizio.esercizio} di 6</h4>`;
+        serie.innerHTML = `<h4>Serie ${iSerie} di ${esercizio.serie}</h4>`;
+        ripetizione.innerHTML = `<h4>${esercizio.ripetizioni} Ripetizioni</h4>`;
         img.innerHTML = `<img class "img" src ="${esercizio.immagine}" alt = "${esercizio.nome}">`;
-        clock.innerHTML = `<h1 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h1>`;
+        img2.innerHTML = `<img class "img2" src ="${nextEsercizio.immagine}" alt = "${nextEsercizio.nome}">`;
+        clock.innerHTML = `<h5 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h5>`;
     }
     else{
         iDay++;
@@ -45,11 +50,13 @@ function changeDay() {
             iExercise = 18;
         }
         const esercizio = source [iExercise];
-        exercise.innerHTML = `Esercizio ${esercizio.esercizio} di 6`;
-        serie.innerHTML = `Serie ${iSerie} di ${esercizio.serie}`;
-        ripetizione.innerHTML = `${esercizio.ripetizioni} Ripetizioni`;
+        const nextEsercizio = source [iExercise+1];
+        exercise.innerHTML = `<h4>Esercizio ${esercizio.esercizio} di 6</h4>`;
+        serie.innerHTML = `<h4>Serie ${iSerie} di ${esercizio.serie}</h4>`;
+        ripetizione.innerHTML = `<h4>${esercizio.ripetizioni} Ripetizioni</h4>`;
         img.innerHTML = `<img class "img" src ="${esercizio.immagine}" alt = "${esercizio.nome}">`;
-        clock.innerHTML = `<h1 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h1>`;
+        img2.innerHTML = `<img class "img2" src ="${nextEsercizio.immagine}" alt = "${nextEsercizio.nome}">`;
+        clock.innerHTML = `<h5 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h5>`;
     }
 }
 
@@ -57,7 +64,7 @@ function changeDay() {
 
 function startCountdown() {
     const esercizio = source [iExercise];
-    var count = esercizio.rest; // 2 minutes in seconds
+    var count = 2;//esercizio.rest; // 2 minutes in seconds
     var timer = setInterval(function() {
       count--;
       var minutes = Math.floor(count / 60);
@@ -69,32 +76,36 @@ function startCountdown() {
       if (count == 0) {
         clearInterval(timer);
         // Do something when countdown is finished
-        if (iExercise === 5 & iSerie===esercizio.serie){
+        if ((iExercise+1)%6 === 0 & iSerie>=esercizio.serie){
             finished.classList.remove("hidden");
             body.classList.add("hidden");
         }
-        if (iSerie===esercizio.serie) {
+        if (iSerie>=esercizio.serie) {
             iSerie = 1;
             iExercise++;
             console.log(iSerie);
             console.log(iExercise);
             const esercizio = source [iExercise];
-            exercise.innerHTML = `Esercizio ${esercizio.esercizio} di 6`;
-            serie.innerHTML = `Serie ${iSerie} di ${esercizio.serie}`;
-            ripetizione.innerHTML = `${esercizio.ripetizioni} Ripetizioni`;
+            const nextEsercizio = source [iExercise+1];
+            exercise.innerHTML = `<h4>Esercizio ${esercizio.esercizio} di 6</h4>`;
+            serie.innerHTML = `<h4>Serie ${iSerie} di ${esercizio.serie}</h4>`;
+            ripetizione.innerHTML = `<h4>${esercizio.ripetizioni} Ripetizioni</h4>`;
             img.innerHTML = `<img class "img" src ="${esercizio.immagine}" alt = "${esercizio.nome}">`;
-            clock.innerHTML = `<h1 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h1>`;
+            img2.innerHTML = `<img class "img2" src ="${nextEsercizio.immagine}" alt = "${nextEsercizio.nome}">`;
+            clock.innerHTML = `<h5 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h5>`;
         }
         else {
             iSerie++;
             console.log(iSerie);
             console.log(iExercise);
             const esercizio = source [iExercise];
-            exercise.innerHTML = `Esercizio ${esercizio.esercizio} di 6`;
-            serie.innerHTML = `Serie ${iSerie} di ${esercizio.serie}`;
-            ripetizione.innerHTML = `${esercizio.ripetizioni} Ripetizioni`;
+            const nextEsercizio = source [iExercise+1];
+            exercise.innerHTML = `<h4>Esercizio ${esercizio.esercizio} di 6</h4>`;
+            serie.innerHTML = `<h4>Serie ${iSerie} di ${esercizio.serie}</h4>`;
+            ripetizione.innerHTML = `<h4>${esercizio.ripetizioni} Ripetizioni</h4>`;
             img.innerHTML = `<img class "img" src ="${esercizio.immagine}" alt = "${esercizio.nome}">`;
-            clock.innerHTML = `<h1 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h1>`;
+            img2.innerHTML = `<img class "img2" src ="${nextEsercizio.immagine}" alt = "${nextEsercizio.nome}">`;
+            clock.innerHTML = `<h2 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h2>`;
         }
       }
     }, 1000);
