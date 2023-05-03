@@ -12,6 +12,7 @@ const body = document.querySelector(".body");
 let iExercise = 0;
 let iSerie = 1;
 let iDay=1;
+var timer; //la definisco quì perché altrimenti non posso usarla in changeDay
 const esercizio = source [iExercise];
 const nextEsercizio = source [iExercise+1];
 exercise.innerHTML = `<h4>Esercizio ${esercizio.esercizio} di 6</h4>`;
@@ -22,6 +23,7 @@ img2.innerHTML = `<img class "img2" src ="${nextEsercizio.immagine}" alt = "${ne
 clock.innerHTML = `<h5 id="countdown">${("0" + Math.floor(esercizio.rest / 60)).slice(-2) + ":" + ("0" + esercizio.rest % 60).slice(-2)}</h5>`;
 
 function changeDay() {
+    clearInterval(timer);
     if (iDay === 4) {
         iDay = 1;
         day.innerHTML = `<h1>Lunedì</h1>`
@@ -69,7 +71,7 @@ function changeDay() {
 function startCountdown() {
     const esercizio = source [iExercise];
     var count = esercizio.rest; // 2 minutes in seconds
-    var timer = setInterval(function() {
+    timer = setInterval(function() {
       count--;
       var minutes = Math.floor(count / 60);
       var seconds = count % 60;
