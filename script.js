@@ -8,7 +8,6 @@ const img2 = document.querySelector(".exerciseImg2");
 const clock = document.querySelector(".clock");
 const finished = document.querySelector(".finished");
 const body = document.querySelector(".body");
-const audio = new Audio('sounds/countdown.mp3');
 
 let iExercise = 0;
 let iSerie = 1;
@@ -18,7 +17,6 @@ refreshData();
 
 function changeDay() {
     clearInterval(timer);
-    audio.pause();
     if (iDay === 4) {
         iDay = 1;
         day.innerHTML = `<h1>Lunedì</h1>`
@@ -49,7 +47,6 @@ function changeDay() {
 
 function startCountdown() {
     clearInterval(timer);
-    audio.pause();
     const esercizio = source [iExercise];
     var count = esercizio.rest; // 2 minutes in seconds
     timer = setInterval(function() {
@@ -59,10 +56,6 @@ function startCountdown() {
       var countdownElement = document.getElementById("countdown");
       if (countdownElement) {
         countdownElement.innerHTML = ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2);
-      }
-      if (count == 10) {
-        audio.currentTime = 0;
-        audio.play();
       }
       if (count == 0) {
         clearInterval(timer);
@@ -86,7 +79,6 @@ function startCountdown() {
 
 function changeExercise() {
     clearInterval(timer);
-    audio.pause();
     if ((iExercise+1)%6 === 0){
         finished.classList.remove("hidden");
         body.classList.add("hidden");
@@ -100,7 +92,6 @@ function changeExercise() {
 
 function changeSerie() {
     clearInterval(timer);
-    audio.pause();
     const esercizio = source [iExercise];
     if ((iExercise+1)%6 === 0 & iSerie>=esercizio.serie){
         finished.classList.remove("hidden");
